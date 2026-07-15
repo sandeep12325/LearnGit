@@ -1,0 +1,41 @@
+# Git Practice File
+
+This is a file designed for practicing Git undo/revert commands. 
+Follow the steps below to practice different Git techniques:
+
+---
+
+## Exercise 1: Practice Git Restore (Undoing Uncommitted Changes)
+1. Add a line at the bottom of this file, like: `This is a bad change.`
+2. Save the file.
+3. In your terminal, run `git status` to see the modified file.
+4. Run `git restore practice.txt` to undo your modification.
+5. Check the file to see that the bad line is gone!
+
+---
+
+## Exercise 2: Practice Git Revert (Undoing a Committed Change Safely)
+1. Initialize Git in this directory if you haven't already: `git init`
+2. Add both files to Git: `git add .`
+3. Commit them: `git commit -m "Initial commit"`
+4. Now, add this line at the bottom: `Oops, I committed this typo line.`
+5. Stage and commit this change:
+   `git add practice.txt`
+   `git commit -m "Added a line with a typo"`
+6. View your commit history: `git log --oneline`
+7. Revert that specific commit: `git revert HEAD`
+   *(This will create a new commit that removes the typo line, keeping your history clean!)*
+
+---
+
+## Exercise 3: Practice Git Reset (Undoing a Commit by Moving Back)
+1. Add another line: `This is another change to test reset.`
+2. Stage and commit it:
+   `git add practice.txt`
+   `git commit -m "Commit to reset"`
+3. View your history: `git log --oneline` and copy the hash of the "Initial commit" (or use `HEAD~1`).
+4. Run a soft reset to keep your changes but undo the commit:
+   `git reset --soft HEAD~1`
+5. Run `git status` to see that your changes are still there but staged!
+6. Discard it completely (dangerous!) with a hard reset:
+   `git reset --hard HEAD` (or specify the initial commit hash)
