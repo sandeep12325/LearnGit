@@ -77,6 +77,5 @@ git reset --hard <commit-hash>
 * **WARNING:** You will lose any uncommitted work.
 
 
-Add git command ---
-git reset --hard Head~1
+
 
