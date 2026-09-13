@@ -76,6 +76,6 @@ git reset --hard <commit-hash>
 * **What it does:** Moves the branch back to the target commit and **permanently discards** all uncommitted changes and subsequent commits.
 * **WARNING:** You will lose any uncommitted work.
 
-#test revert conde
+
 
 
